@@ -1,7 +1,5 @@
-
 Config = {}
-Config.ScriptName = GetCurrentResourceName() 
-
+Config.ScriptName = GetCurrentResourceName()
 -- TODO
 -- CAMERA FACE NPC
 -- NPC ANIMATION
@@ -9,6 +7,12 @@ Config.ScriptName = GetCurrentResourceName()
 --menu position
 -- "center" / "top-left" / "top-right"
 Config.Align = "top-left"
+
+Config.defaultlang = "en_lang"
+
+-- open stores
+Config.Key = 0x760A9C6F --[G]
+
 
 --Webhook Section, description is in translation
 Config.UseWebhook = false -- Use webhook
@@ -24,106 +28,158 @@ Config.WebhookLogo = ""
 Config.WebhookLogo2 = ""
 Config.WebhookAvatar = ""
 
-Config.defaultlang = "en_lang"
 
--- open stores
-Config.Key = 0x760A9C6F --[G]
-
-
-    --- STORES ---
-
-Config.Stores = { 
------------------------------------------------------------------------------
---------------------------------------Valentine------------------------------
------------------------------------------------------------------------------
-    ValBlacksmith = {
+--- STORES ---
+Config.Stores = {  
+    -----------------------------------------------------------------------------
+    --------------------------------------Valentine------------------------------
+    -----------------------------------------------------------------------------
+    ValGeneralStore = {
         blipAllowed = true,
-        BlipName = "Blacksmith Shop",
-        storeName = "Valentine Blacksmith Shop",
-        PromptName = "Blacksmith Shop",
-        sprite = -758970771,
-        x = -360.44, y = 794.71, z = 116.24, h = 336.49,
+        BlipName = "General Store",
+        storeName = "Valentine General Store",
+        PromptName = "General Store",
+        sprite = 1475879922,
+        x = -324.13, y = 803.52, z = 117.88, h= 291.16,
         distanceOpenStore = 3.0,
         NpcAllowed = true,
-        NpcModel = "S_M_M_LiveryWorker_01",
+        NpcModel = "U_F_M_TumGeneralStoreOwner_01",
         AllowedJobs = {}, -- jobs allowed
         JobGrade = 0,
-        category = { "Tools" }, -- you need to add the same words to the buyitems and buyitems category you can add new categories as long the items have the category names
-        storeType = {  "Buy","Sell" }, -- choose the storetype if you translate this you must do the same in the client.lua file
+        category = { "Survival", "Food", "Drinks", "Items", "Dog", "Pig" }, -- you need to add the same words to the buyitems and buyitems category you can add new categories as long the items have the category names
+        storeType = { "Buy","Sell"  }, -- choose the storetype if you translate this you must do the same in the client.lua file
         StoreHoursAllowed = false, -- if you want the stores to use opening and closed hours
         RandomPrices = false,
         StoreOpen = 7, -- am
         StoreClose = 21 -- pm
-
-    }, 
+    },
 }
 
------------------------------------------------------------------------------
--------------------------------------ITEMS-----------------------------------
------------------------------------------------------------------------------
 
-    -- ItemLable = translate here
-    -- itemName = same as in your databse
-    -- curencytype = "cash" or "gold" only use one.
-    -- price = numbers only
-    -- desc = a description of the item
-    -- category = where the item will be displayed at 
+----------------------------------------------- STORE ITEMS --------------------------------------------------------------
+-- ItemLable = translate here
+-- itemName = same as in your databse
+-- curencytype = "cash" or "gold" only use one.
+-- price = numbers only
+-- desc = a description of the item
+-- category = where the item will be displayed at
 
-BlackSmith_ShopItems_SELL = {         
-       -- Tools
-    { itemLabel = "Pickaxe", itemName = "pickaxe", currencyType = "cash", sellprice = 5, randomprice = math.random(30, 55), desc = "Sell a Pickaxe", category = "Tools" },
-    { itemLabel = "Hatchet", itemName = "hatchet", currencyType = "cash", sellprice = 5, randomprice = math.random(30, 55), desc = "Sell a Garden Hoe", category = "Tools" }       
-} 
+SELL_ITEMS_GENERALSTORE = {
+                -- Survival
+                { itemLabel = "Campfire", itemName = "campfire", currencyType = "cash", sellprice = 5, randomprice = math.random(30, 55), desc = "Sell a Campfire", category = "Survival" },
+                { itemLabel = "Tent", itemName = "tent", currencyType = "cash", sellprice = 10, randomprice = math.random(30, 55), desc = "Sell a Tent", category = "Survival" },
+            -- Food
+                { itemLabel = "Salmon Can", itemName = "consumable_salmon_can", currencyType = "cash", sellprice = 2, randomprice = math.random(30, 55), desc = "Sell a Can of Salmon", category = "Food" },
+                { itemLabel = "Peach", itemName = "consumable_peach", currencyType = "cash", sellprice = .25, randomprice = math.random(30, 55), desc = "Sell a Peach", category = "Food" },
+            -- Drinks
+                { itemLabel = "Water", itemName = "water", currencyType = "cash", sellprice = 1, randomprice = math.random(30, 55), desc = "Sell a Bottle of Water", category = "Drinks" },
+                { itemLabel = "Coffee", itemName = "consumable_coffee", currencyType = "cash", sellprice = 1, randomprice = math.random(30, 55), desc = "Sell a Cup of Coffee", category = "Drinks" },
+            -- Items
+                { itemLabel = "Glass Bottle", itemName = "glassbottle", currencyType = "cash", sellprice = 1, randomprice = math.random(30, 55), desc = "Sell a Glass Bottle", category = "Items" },
+                { itemLabel = "Mail Pigeon", itemName = "pigeon_global", currencyType = "cash", sellprice = 2, randomprice = math.random(30, 55), desc = "Sell a Mail Pigeon", category = "Items" },
+                { itemLabel = "Rolling Paper", itemName = "rollingpaper", currencyType = "cash", sellprice = 1, randomprice = math.random(30, 55), desc = "Sell Rolling Paper", category = "Items" },
+                { itemLabel = "Weapon Cloth", itemName = "cleanshort", currencyType = "cash", sellprice = 1, randomprice = math.random(30, 55), desc = "Sell a Weapon Cloth", category = "Items" },
+}
 
+---------------------------------------------------- SELL ITEMS --------------------------------------------------------------
 -----------------------------------------------------------------------------
 --------------------------------------SELL ITEMS ----------------------------
 -----------------------------------------------------------------------------
-Config.SellItems = {       
+Config.SellItems = {      
+    -----------------------------------------------------------------------------
+    --------------------------------------Armadillo------------------------------
+    -----------------------------------------------------------------------------
+        ArmadilloGeneralStore = SELL_ITEMS_GENERALSTORE, 
+    -----------------------------------------------------------------------------
+    --------------------------------------Blackwater------------------------------
+    -----------------------------------------------------------------------------
+        BlackwaterGeneralStore = SELL_ITEMS_GENERALSTORE, 
+    -----------------------------------------------------------------------------
+    --------------------------------------Rhodes---------------------------------
+    -----------------------------------------------------------------------------
+        RhodesGeneralStore = SELL_ITEMS_GENERALSTORE, 
+    -----------------------------------------------------------------------------
+    --------------------------------------St-Denis-------------------------------
+    -----------------------------------------------------------------------------
+        StDenisGeneralStore = SELL_ITEMS_GENERALSTORE, 
+    -----------------------------------------------------------------------------
+    --------------------------------------Strawberry-----------------------------
+    -----------------------------------------------------------------------------
+        StrawbGeneralStore = SELL_ITEMS_GENERALSTORE, 
+    -----------------------------------------------------------------------------
+    --------------------------------------Tumbleweed-----------------------------
+    -----------------------------------------------------------------------------
+        TumbleGeneralStore = SELL_ITEMS_GENERALSTORE, 
     -----------------------------------------------------------------------------
     --------------------------------------Valentine------------------------------
-    -----------------------------------------------------------------------------        
-        ValBlacksmith = BlackSmith_ShopItems_SELL,  
+    -----------------------------------------------------------------------------
+        ValGeneralStore = SELL_ITEMS_GENERALSTORE, 
+    -----------------------------------------------------------------------------
+    --------------------------------------Vanhorn--------------------------------
+    -----------------------------------------------------------------------------
+        VanGeneralStore = SELL_ITEMS_GENERALSTORE,         
 }
------------------------------------------------------------------------------
--------------------------------------ITEMS-----------------------------------
------------------------------------------------------------------------------
 
-    -- ItemLable = translate here
-    -- itemName = same as in your databse
-    -- curencytype = "cash" or "gold" only use one.
-    -- price = numbers only
-    -- desc = a description of the item
-    -- category = where the item will be displayed at
-    BlackSmith_ShopItems_BUY = {
-            -- Tools
-           { itemLabel = "Pickaxe", itemName = "pickaxe", currencyType = "cash", buyprice = 20, randomprice = math.random(30, 55), desc = "Buy a Pickaxe", category = "Tools" },
-            { itemLabel = "Hatchet", itemName = "hatchet", currencyType = "cash", buyprice = 20, randomprice = math.random(30, 55), desc = "Buy a Garden Hoe", category = "Tools" }            
-     }
+----------------------------------------------- STORE ITEMS --------------------------------------------------------------
+-- ItemLable = translate here
+-- itemName = same as in your databse
+-- curencytype = "cash" or "gold" only use one.
+-- price = numbers only
+-- desc = a description of the item
+-- category = where the item will be displayed at
+
+BUY_ITEMS_GENERALSTORE = {
+        -- Survival
+            { itemLabel = "Campfire", itemName = "campfire", currencyType = "cash", buyprice = 15, randomprice = math.random(30, 55), desc = "Buy a Campfire", category = "Survival" },
+            { itemLabel = "Tent", itemName = "tent", currencyType = "cash", buyprice = 20, randomprice = math.random(30, 55), desc = "Buy a Tent", category = "Survival" },
+        -- Food
+            { itemLabel = "Salmon Can", itemName = "consumable_salmon_can", currencyType = "cash", buyprice = 3, randomprice = math.random(30, 55), desc = "Buy a Can of Salmon", category = "Food" },
+            { itemLabel = "Peach", itemName = "consumable_peach", currencyType = "cash", buyprice = 2, randomprice = math.random(30, 55), desc = "Buy a Peach", category = "Food" },
+        -- Drinks
+            { itemLabel = "Water", itemName = "water", currencyType = "cash", buyprice = 2, randomprice = math.random(30, 55), desc = "Buy a Bottle of Water", category = "Drinks" },
+            { itemLabel = "Coffee", itemName = "consumable_coffee", currencyType = "cash", buyprice = 2, randomprice = math.random(30, 55), desc = "Buy a Cup of Coffee", category = "Drinks" },
+        -- Items
+            { itemLabel = "Glass Bottle", itemName = "glassbottle", currencyType = "cash", buyprice = .25, randomprice = math.random(30, 55), desc = "Buy a Glass Bottle", category = "Items" },
+            { itemLabel = "Mail Pigeon", itemName = "pigeon_global", currencyType = "cash", buyprice = 5, randomprice = math.random(30, 55), desc = "Buy a Mail Pigeon", category = "Items" },
+            { itemLabel = "Rolling Paper", itemName = "rollingpaper", currencyType = "cash", buyprice = .5, randomprice = math.random(30, 55), desc = "Buy Rolling Paper", category = "Items" },
+            { itemLabel = "Weapon Cloth", itemName = "cleanshort", currencyType = "cash", buyprice = 2, randomprice = math.random(30, 55), desc = "Buy a Weapon Cloth", category = "Items" },
+}
+
 -----------------------------------------------------------------------------
 --------------------------------------BUY ITEMS ----------------------------
 -----------------------------------------------------------------------------
-Config.BuyItems = {     
+Config.BuyItems = {    
+    -----------------------------------------------------------------------------
+    --------------------------------------Armadillo- ----------------------------
+    -----------------------------------------------------------------------------
+        ArmadilloGeneralStore = BUY_ITEMS_GENERALSTORE, 
+    -----------------------------------------------------------------------------
+    --------------------------------------Blackwater------------------------------
+    -----------------------------------------------------------------------------
+        BlackwaterGeneralStore = BUY_ITEMS_GENERALSTORE, 
+    -----------------------------------------------------------------------------
+    --------------------------------------Rhodes---------------------------------
+    -----------------------------------------------------------------------------
+        RhodesGeneralStore = BUY_ITEMS_GENERALSTORE, 
+    -----------------------------------------------------------------------------
+    --------------------------------------St-Denis-------------------------------
+    -----------------------------------------------------------------------------
+        StDenisGeneralStore = BUY_ITEMS_GENERALSTORE, 
+    -----------------------------------------------------------------------------
+    --------------------------------------Strawberry-----------------------------
+    -----------------------------------------------------------------------------
+        StrawbGeneralStore = BUY_ITEMS_GENERALSTORE, 
+    -----------------------------------------------------------------------------
+    --------------------------------------Tumbleweed-----------------------------
+    -----------------------------------------------------------------------------
+        TumbleGeneralStore = BUY_ITEMS_GENERALSTORE, 
     -----------------------------------------------------------------------------
     --------------------------------------Valentine------------------------------
-    -----------------------------------------------------------------------------       
-        ValBlacksmith = BlackSmith_ShopItems_BUY, 
+    -----------------------------------------------------------------------------
+        ValGeneralStore = BUY_ITEMS_GENERALSTORE, 
+    -----------------------------------------------------------------------------
+    --------------------------------------Vanhorn--------------------------------
+    -----------------------------------------------------------------------------
+        VanGeneralStore = BUY_ITEMS_GENERALSTORE,  
 }
-
---- Want the pre configured data for the stores? 
---- Little Creek -- Admin an dConcept Owner of Little Creek, Tillie 
-------- has put together an amazing set of stores and items.
-
---- Purchase her configuration files for vorp_stores at our website.
---- https://craftedbylittledragons.net/vorp-store-configuration-files-by-tillie-little-creek/
-
---- The config file for this specific store.
---- https://craftedbylittledragons.net/product/vorp_store_blacksmith-config-lua/
-
---- The related crafting files.
---- https://craftedbylittledragons.net/product/vorp_crafting_blacksmith-config-lua/
-
---- All crafting files. 
---- https://craftedbylittledragons.net/vorp-crafting-configuration-files-by-tillie-little-creek/
-
---- Bundles are available here:
---- https://craftedbylittledragons.net/vorp-configuration-files-bundles-by-tillie-little-creek/
+ 
