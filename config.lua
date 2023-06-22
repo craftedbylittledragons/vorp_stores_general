@@ -66,19 +66,19 @@ Config.Stores = {
 
 SELL_ITEMS_GENERALSTORE = {
                 -- Survival
-                { itemLabel = "Campfire", itemName = "campfire", currencyType = "cash", sellprice = 5, randomprice = math.random(30, 55), desc = "Sell a Campfire", category = "Survival" },
-                { itemLabel = "Tent", itemName = "tent", currencyType = "cash", sellprice = 10, randomprice = math.random(30, 55), desc = "Sell a Tent", category = "Survival" },
+                { itemLabel = "Campfire", itemName = "campfire", currencyType = "cash", item_price = 5, randomprice = math.random(30, 55), desc = "Sell a Campfire", category = "Survival" },
+                { itemLabel = "Tent", itemName = "tent", currencyType = "cash", item_price = 10, randomprice = math.random(30, 55), desc = "Sell a Tent", category = "Survival" },
             -- Food
-                { itemLabel = "Salmon Can", itemName = "consumable_salmon_can", currencyType = "cash", sellprice = 2, randomprice = math.random(30, 55), desc = "Sell a Can of Salmon", category = "Food" },
-                { itemLabel = "Peach", itemName = "consumable_peach", currencyType = "cash", sellprice = .25, randomprice = math.random(30, 55), desc = "Sell a Peach", category = "Food" },
+                { itemLabel = "Salmon Can", itemName = "consumable_salmon_can", currencyType = "cash", item_price = 2, randomprice = math.random(30, 55), desc = "Sell a Can of Salmon", category = "Food" },
+                { itemLabel = "Peach", itemName = "consumable_peach", currencyType = "cash", item_price = .25, randomprice = math.random(30, 55), desc = "Sell a Peach", category = "Food" },
             -- Drinks
-                { itemLabel = "Water", itemName = "water", currencyType = "cash", sellprice = 1, randomprice = math.random(30, 55), desc = "Sell a Bottle of Water", category = "Drinks" },
-                { itemLabel = "Coffee", itemName = "consumable_coffee", currencyType = "cash", sellprice = 1, randomprice = math.random(30, 55), desc = "Sell a Cup of Coffee", category = "Drinks" },
+                { itemLabel = "Water", itemName = "water", currencyType = "cash", item_price = 1, randomprice = math.random(30, 55), desc = "Sell a Bottle of Water", category = "Drinks" },
+                { itemLabel = "Coffee", itemName = "consumable_coffee", currencyType = "cash", item_price = 1, randomprice = math.random(30, 55), desc = "Sell a Cup of Coffee", category = "Drinks" },
             -- Items
-                { itemLabel = "Glass Bottle", itemName = "glassbottle", currencyType = "cash", sellprice = 1, randomprice = math.random(30, 55), desc = "Sell a Glass Bottle", category = "Items" },
-                { itemLabel = "Mail Pigeon", itemName = "pigeon_global", currencyType = "cash", sellprice = 2, randomprice = math.random(30, 55), desc = "Sell a Mail Pigeon", category = "Items" },
-                { itemLabel = "Rolling Paper", itemName = "rollingpaper", currencyType = "cash", sellprice = 1, randomprice = math.random(30, 55), desc = "Sell Rolling Paper", category = "Items" },
-                { itemLabel = "Weapon Cloth", itemName = "cleanshort", currencyType = "cash", sellprice = 1, randomprice = math.random(30, 55), desc = "Sell a Weapon Cloth", category = "Items" },
+                { itemLabel = "Glass Bottle", itemName = "glassbottle", currencyType = "cash", item_price = 1, randomprice = math.random(30, 55), desc = "Sell a Glass Bottle", category = "Items" },
+                { itemLabel = "Mail Pigeon", itemName = "pigeon_global", currencyType = "cash", item_price = 2, randomprice = math.random(30, 55), desc = "Sell a Mail Pigeon", category = "Items" },
+                { itemLabel = "Rolling Paper", itemName = "rollingpaper", currencyType = "cash", item_price = 1, randomprice = math.random(30, 55), desc = "Sell Rolling Paper", category = "Items" },
+                { itemLabel = "Weapon Cloth", itemName = "cleanshort", currencyType = "cash", item_price = 1, randomprice = math.random(30, 55), desc = "Sell a Weapon Cloth", category = "Items" },
 }
 
 ---------------------------------------------------- SELL ITEMS --------------------------------------------------------------
@@ -130,19 +130,19 @@ Config.SellItems = {
 
 BUY_ITEMS_GENERALSTORE = {
         -- Survival
-            { itemLabel = "Campfire", itemName = "campfire", currencyType = "cash", buyprice = 15, randomprice = math.random(30, 55), desc = "Buy a Campfire", category = "Survival" },
-            { itemLabel = "Tent", itemName = "tent", currencyType = "cash", buyprice = 20, randomprice = math.random(30, 55), desc = "Buy a Tent", category = "Survival" },
+            { itemLabel = "Campfire", itemName = "campfire", currencyType = "cash", item_price = 15, randomprice = math.random(30, 55), desc = "Buy a Campfire", category = "Survival" },
+            { itemLabel = "Tent", itemName = "tent", currencyType = "cash", item_price = 20, randomprice = math.random(30, 55), desc = "Buy a Tent", category = "Survival" },
         -- Food
-            { itemLabel = "Salmon Can", itemName = "consumable_salmon_can", currencyType = "cash", buyprice = 3, randomprice = math.random(30, 55), desc = "Buy a Can of Salmon", category = "Food" },
-            { itemLabel = "Peach", itemName = "consumable_peach", currencyType = "cash", buyprice = 2, randomprice = math.random(30, 55), desc = "Buy a Peach", category = "Food" },
+            { itemLabel = "Salmon Can", itemName = "consumable_salmon_can", currencyType = "cash", item_price = 3, randomprice = math.random(30, 55), desc = "Buy a Can of Salmon", category = "Food" },
+            { itemLabel = "Peach", itemName = "consumable_peach", currencyType = "cash", item_price = 2, randomprice = math.random(30, 55), desc = "Buy a Peach", category = "Food" },
         -- Drinks
-            { itemLabel = "Water", itemName = "water", currencyType = "cash", buyprice = 2, randomprice = math.random(30, 55), desc = "Buy a Bottle of Water", category = "Drinks" },
-            { itemLabel = "Coffee", itemName = "consumable_coffee", currencyType = "cash", buyprice = 2, randomprice = math.random(30, 55), desc = "Buy a Cup of Coffee", category = "Drinks" },
+            { itemLabel = "Water", itemName = "water", currencyType = "cash", item_price = 2, randomprice = math.random(30, 55), desc = "Buy a Bottle of Water", category = "Drinks" },
+            { itemLabel = "Coffee", itemName = "consumable_coffee", currencyType = "cash", item_price = 2, randomprice = math.random(30, 55), desc = "Buy a Cup of Coffee", category = "Drinks" },
         -- Items
-            { itemLabel = "Glass Bottle", itemName = "glassbottle", currencyType = "cash", buyprice = .25, randomprice = math.random(30, 55), desc = "Buy a Glass Bottle", category = "Items" },
-            { itemLabel = "Mail Pigeon", itemName = "pigeon_global", currencyType = "cash", buyprice = 5, randomprice = math.random(30, 55), desc = "Buy a Mail Pigeon", category = "Items" },
-            { itemLabel = "Rolling Paper", itemName = "rollingpaper", currencyType = "cash", buyprice = .5, randomprice = math.random(30, 55), desc = "Buy Rolling Paper", category = "Items" },
-            { itemLabel = "Weapon Cloth", itemName = "cleanshort", currencyType = "cash", buyprice = 2, randomprice = math.random(30, 55), desc = "Buy a Weapon Cloth", category = "Items" },
+            { itemLabel = "Glass Bottle", itemName = "glassbottle", currencyType = "cash", item_price = .25, randomprice = math.random(30, 55), desc = "Buy a Glass Bottle", category = "Items" },
+            { itemLabel = "Mail Pigeon", itemName = "pigeon_global", currencyType = "cash", item_price = 5, randomprice = math.random(30, 55), desc = "Buy a Mail Pigeon", category = "Items" },
+            { itemLabel = "Rolling Paper", itemName = "rollingpaper", currencyType = "cash", item_price = .5, randomprice = math.random(30, 55), desc = "Buy Rolling Paper", category = "Items" },
+            { itemLabel = "Weapon Cloth", itemName = "cleanshort", currencyType = "cash", item_price = 2, randomprice = math.random(30, 55), desc = "Buy a Weapon Cloth", category = "Items" },
 }
 
 -----------------------------------------------------------------------------
